@@ -11317,7 +11317,7 @@ vless://7b102311-43fd-4e8f-977e-8090623c101d@edt-pages.github.io:443?security=tl
                 function formatResultForAdmin(item) {
                     const details = [`${item.latency}ms`];
                     if (item.speedState === "done" && Number.isFinite(item.speedMbps) && item.speedMbps > 0) {
-                        details.push(`${Math.ceil(item.speedMbps)}Mbps`);
+                        details.push(`${Math.ceil(item.speedMbps)}.Mbps`);
                     }
                     return `${item.address}#${item.country} ${item.type}[${details.join(" ")}]`;
                 }
@@ -11466,7 +11466,7 @@ vless://7b102311-43fd-4e8f-977e-8090623c101d@edt-pages.github.io:443?security=tl
 
                 function renderSpeedCell(item, index) {
                     if (item.speedState === "testing") return `<span class="muted">测速中 ${item.speedRemaining ?? 10}s</span>`;
-                    if (item.speedState === "done") return `<button class="link-btn" type="button" data-speed-index="${index}"><strong>${Math.ceil(item.speedMbps)}Mbps</strong></button>`;
+                    if (item.speedState === "done") return `<button class="link-btn" type="button" data-speed-index="${index}"><strong>${Math.ceil(item.speedMbps)}.Mbps</strong></button>`;
                     if (item.speedState === "failed") return '<span class="tag bad">失败</span>';
                     if (item.speedState === "stopped") return '<span class="muted">测速已停止</span>';
                     return `<button class="link-btn" type="button" data-speed-index="${index}">待测试</button>`;
